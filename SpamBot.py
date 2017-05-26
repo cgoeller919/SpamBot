@@ -12,6 +12,8 @@ mposx, mposy = pyautogui.position()
 #print(mposx)
 #print(mposy)
 
+
+
 def spam():
     endcount = eval(input('Enter the amount of messages you would like to spam: '))#user inputs amount of times for spamming
     print("Click when you are ready to begin.")
@@ -32,4 +34,19 @@ def spam():
         pyautogui.hotkey('enter')#pressing of enter button
         count += 1  
 
-spam()
+def gather():
+    sPhrase = eval(input('Enter 1 for a Single Phrase, or 2 for a random set of phrases: '))#determines if user wants to spam a single phrase or a prebuilt set of random phrases
+    if sPhrase == 1:
+        SpamText = input('Please Enter the Phrase you would like to spam: ')#changes SpamText to user designated phrase
+        spam()
+        print('Im working')
+    else:    
+        if sPhrase == 2: #runs preselected spam phrases
+            spam()
+            print('imworking')
+        else:
+            print('Slection invalid. Please try again.')
+            gather()
+
+#spam()
+gather()
