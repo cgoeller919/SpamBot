@@ -26,7 +26,7 @@ def spam():
     count = 1
     while count <= endcount:
         state_esc = win32api.GetKeyState(0x1B) #Determines if Esc Is Pressed
-        if state_esc == 1: #Breaks if Esc Is Pressed
+        if state_esc > 0: #Breaks if Esc Is Pressed
             break
         pyautogui.click(mposx, mposy)#position of chatbox
         pyautogui.typewrite(random.choice(ChristianSucks), interval=0.01)
