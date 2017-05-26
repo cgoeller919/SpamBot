@@ -31,7 +31,7 @@ def spam(): #main random spam function
         pyautogui.hotkey('enter')#pressing of enter button
         count += 1  
 
-def singleSpam():#single phrase spam function
+def singleSpam(userPhrase):#single phrase spam function
     endcount = eval(input('Enter the amount of messages you would like to spam: '))#user inputs amount of times for spamming
     print("Click when you are ready to begin.")
     state_left = win32api.GetKeyState(0x01) #Determine State Left Mouse is in
@@ -47,14 +47,14 @@ def singleSpam():#single phrase spam function
         if state_esc > 0: #Breaks if Esc Is Pressed
             break
         pyautogui.click(mposx, mposy)#get position of chatbox
-        pyautogui.typewrite((SpamText), interval=0.01)#type user selected string, set interval time for typing each character
+        pyautogui.typewrite(userPhrase, interval=0.01)#type user selected string, set interval time for typing each character
         pyautogui.hotkey('enter')#pressing of enter button
         count += 1
         
 def gather():
     sPhrase = eval(input('Enter 1 for a Single Phrase, or 2 for a random set of phrases: '))#determines if user wants to spam a single phrase or a prebuilt set of random phrases
     if sPhrase == 1:
-        SpamText = input('Please Enter the Phrase you would like to spam: ')#changes SpamText to user designated phrase
+        userPhrase = input('Please Enter the Phrase you would like to spam: ')#changes SpamText to user designated phrase
         singleSpam()
         print('User Phrase Spamming')#console output to verify which sPhrase choice is running
     elif sPhrase == 2: #runs preselected spam phrases
