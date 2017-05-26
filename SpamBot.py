@@ -40,13 +40,12 @@ def gather():
         SpamText = input('Please Enter the Phrase you would like to spam: ')#changes SpamText to user designated phrase
         spam()
         print('User Phrase Spamming')#console output to verify which sPhrase choice is running
-    else:    
-        if sPhrase == 2: #runs preselected spam phrases
-            spam()
-            print('Pre-Selected Phrases Spamming')#console output to verify which sPhrase choice is running
-        else:
-            print('Slection invalid. Please try again.')
-            gather()
+    elif sPhrase == 2: #runs preselected spam phrases
+        spam()
+        print('Pre-Selected Phrases Spamming')#console output to verify which sPhrase choice is running
+    else:
+        print('Slection invalid. Please try again.')
+        gather()
 
 #spam()
 gather()
